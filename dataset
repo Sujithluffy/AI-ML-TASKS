@@ -1,0 +1,120 @@
+import pandas as pd
+
+df = pd.read_csv("/content/student_performance_dataset.csv")
+
+
+print("First 5 Rows:")
+print(df.head())
+
+print("\nLast 5 Rows:")
+print(df.tail())
+
+
+print("\nShape of Dataset:")
+print(df.shape)
+
+
+print("\nColumn Names:")
+print(df.columns)
+
+
+print("\nDataset Information:")
+print(df.info())
+
+First 5 Rows:
+   student_id  gender  study_time_hours  attendance_percent  sleep_hours  \
+0           1    Male               4.0                98.0          6.5   
+1           2  Female               6.3               100.0          5.7   
+2           3    Male               4.9                85.3          7.9   
+3           4    Male               2.6                77.5          8.0   
+4           5    Male               2.2                89.6          4.6   
+
+  parental_education internet_access extracurricular_activities part_time_job  \
+0          Bachelors             Yes                        Yes            No   
+1        High School             Yes                        Yes           Yes   
+2          Bachelors             Yes                         No           Yes   
+3                NaN             Yes                        Yes            No   
+4          Bachelors             Yes                         No           Yes   
+
+   previous_grade  final_exam_score final_grade  
+0            76.9             100.0           A  
+1            75.5             100.0           A  
+2            88.5              97.3           A  
+3            85.1              83.8           B  
+4            61.8              68.3           D  
+
+Last 5 Rows:
+     student_id  gender  study_time_hours  attendance_percent  sleep_hours  \
+995         996    Male               2.8                75.4          8.2   
+996         997    Male               6.7                88.4          7.1   
+997         998  Female               2.6                84.5          8.0   
+998         999  Female               4.6                85.3          8.1   
+999        1000    Male               3.9                77.4          6.1   
+
+    parental_education internet_access extracurricular_activities  \
+995            Masters             Yes                        Yes   
+996                NaN              No                        Yes   
+997        High School             Yes                        Yes   
+998        High School              No                         No   
+999            Masters             Yes                         No   
+
+    part_time_job  previous_grade  final_exam_score final_grade  
+995            No            60.5              70.7           C  
+996            No            82.2              99.5           A  
+997           Yes            65.2              79.2           C  
+998           Yes            52.2              82.2           B  
+999            No            45.4              70.4           C  
+
+Shape of Dataset:
+(1000, 12)
+
+Column Names:
+Index(['student_id', 'gender', 'study_time_hours', 'attendance_percent',
+       'sleep_hours', 'parental_education', 'internet_access',
+       'extracurricular_activities', 'part_time_job', 'previous_grade',
+       'final_exam_score', 'final_grade'],
+      dtype='object')
+
+Dataset Information:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 12 columns):
+ #   Column                      Non-Null Count  Dtype  
+---  ------                      --------------  -----  
+ 0   student_id                  1000 non-null   int64  
+ 1   gender                      1000 non-null   object 
+ 2   study_time_hours            1000 non-null   float64
+ 3   attendance_percent          1000 non-null   float64
+ 4   sleep_hours                 1000 non-null   float64
+ 5   parental_education          898 non-null    object 
+ 6   internet_access             1000 non-null   object 
+ 7   extracurricular_activities  1000 non-null   object 
+ 8   part_time_job               1000 non-null   object 
+ 9   previous_grade              1000 non-null   float64
+ 10  final_exam_score            1000 non-null   float64
+ 11  final_grade                 1000 non-null   object 
+dtypes: float64(5), int64(1), object(6)
+memory usage: 93.9+ KB
+None
+
+
+print(df.describe())
+        student_id  study_time_hours  attendance_percent  sleep_hours  \
+count  1000.000000       1000.000000         1000.000000  1000.000000   
+mean    500.500000          3.570700           85.092300     6.799500   
+std     288.819436          1.478559            9.270685     1.203527   
+min       1.000000          0.500000           54.800000     3.200000   
+25%     250.750000          2.600000           78.800000     5.900000   
+50%     500.500000          3.600000           85.200000     6.800000   
+75%     750.250000          4.500000           91.900000     7.600000   
+max    1000.000000          8.100000          100.000000    10.000000   
+
+       previous_grade  final_exam_score  
+count     1000.000000       1000.000000  
+mean        69.740900         83.543500  
+std         12.613425         10.341333  
+min         31.300000         46.800000  
+25%         61.000000         76.075000  
+50%         69.600000         83.800000  
+75%         78.400000         91.525000  
+max        100.000000        100.000000  
