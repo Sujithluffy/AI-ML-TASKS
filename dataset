@@ -20,7 +20,7 @@ print(df.columns)
 
 print("\nDataset Information:")
 print(df.info())
-
+output:
 First 5 Rows:
    student_id  gender  study_time_hours  attendance_percent  sleep_hours  \
 0           1    Male               4.0                98.0          6.5   
@@ -99,6 +99,7 @@ None
 
 
 print(df.describe())
+output:
         student_id  study_time_hours  attendance_percent  sleep_hours  \
 count  1000.000000       1000.000000         1000.000000  1000.000000   
 mean    500.500000          3.570700           85.092300     6.799500   
