@@ -1,0 +1,167 @@
+import pandas as pd
+
+# Load Dataset
+df = pd.read_csv("/content/Asian_Monsoon_Flood_Risk_Index.csv")
+
+print("First 5 Rows")
+print(df.head())
+
+print("\nStatistical Summary")
+print(df.describe())
+
+print("\nData Types")
+print(df.dtypes)
+
+print("\nMissing Values")
+print(df.isnull().sum())
+
+print("\nUnique Values Count")
+print(df.nunique())
+
+print("\nDataset Shape")
+print(df.shape)
+
+print("\nRandom 10 Records")
+print(df.sample(10))
+
+output:
+First 5 Rows
+         Region_ID  Monsoon_Intensity_Index  Topographic_Wetness_Index  \
+0   Chao_Phraya_TH                74.362844                  16.449025   
+1     Red_River_VN                57.222951                  10.753842   
+2  Mekong_Delta_VN                45.945754                  16.092284   
+3     Red_River_VN                62.301348                  11.934957   
+4     Red_River_VN                83.526681                  14.355790   
+
+   River_Discharge_Rate_CMS  Deforestation_Rate_Pct  Urban_Impervious_Pct  \
+0               1564.361885               27.566675             16.678039   
+1                205.219016               35.166157             34.865899   
+2               1109.951968               11.538884             35.505539   
+3                279.376150               14.406374             53.279847   
+4               4054.892388               76.178339             17.206297   
+
+   Soil_Moisture_Anomaly  Flood_Probability  Flood_Target_Binary  
+0               0.658005           0.603003                    0  
+1               0.358294           0.411600                    0  
+2               0.734650           0.541335                    0  
+3               0.873312           0.581188                    0  
+4               0.428771           0.538685                    0  
+
+Statistical Summary
+       Monsoon_Intensity_Index  Topographic_Wetness_Index  \
+count             15000.000000               15000.000000   
+mean                 67.923181                  12.500639   
+std                  13.722267                   3.229681   
+min                  15.000000                   2.000000   
+25%                  58.443818                  10.335823   
+50%                  67.954315                  12.492984   
+75%                  77.340699                  14.666124   
+max                 100.000000                  25.000000   
+
+       River_Discharge_Rate_CMS  Deforestation_Rate_Pct  Urban_Impervious_Pct  \
+count              15000.000000            15000.000000          15000.000000   
+mean                2621.895219               28.573616             33.239457   
+std                 2561.671340               15.982751             17.764936   
+min                  150.000000                0.133882              0.430283   
+25%                  768.560404               16.026379             19.266460   
+50%                 1815.906136               26.529559             31.256966   
+75%                 3675.846978               38.786566             45.354716   
+max                23821.052769               89.779539             94.160845   
+
+       Soil_Moisture_Anomaly  Flood_Probability  Flood_Target_Binary  
+count           15000.000000       15000.000000         15000.000000  
+mean                0.453093           0.497896             0.072600  
+std                 0.197002           0.082825             0.259487  
+min                 0.000000           0.204166             0.000000  
+25%                 0.316198           0.441699             0.000000  
+50%                 0.451757           0.497640             0.000000  
+75%                 0.586435           0.554171             0.000000  
+max                 1.000000           0.820825             1.000000  
+
+Data Types
+Region_ID                     object
+Monsoon_Intensity_Index      float64
+Topographic_Wetness_Index    float64
+River_Discharge_Rate_CMS     float64
+Deforestation_Rate_Pct       float64
+Urban_Impervious_Pct         float64
+Soil_Moisture_Anomaly        float64
+Flood_Probability            float64
+Flood_Target_Binary            int64
+dtype: object
+
+Missing Values
+Region_ID                    0
+Monsoon_Intensity_Index      0
+Topographic_Wetness_Index    0
+River_Discharge_Rate_CMS     0
+Deforestation_Rate_Pct       0
+Urban_Impervious_Pct         0
+Soil_Moisture_Anomaly        0
+Flood_Probability            0
+Flood_Target_Binary          0
+dtype: int64
+
+Unique Values Count
+Region_ID                        6
+Monsoon_Intensity_Index      14845
+Topographic_Wetness_Index    14992
+River_Discharge_Rate_CMS     14190
+Deforestation_Rate_Pct       15000
+Urban_Impervious_Pct         15000
+Soil_Moisture_Anomaly        14769
+Flood_Probability            15000
+Flood_Target_Binary              2
+dtype: int64
+
+Dataset Shape
+(15000, 9)
+
+Random 10 Records
+                   Region_ID  Monsoon_Intensity_Index  \
+7785          Chao_Phraya_TH                93.127417   
+5231   Ganges_Brahmaputra_BD                44.227548   
+10507         Chao_Phraya_TH                65.495558   
+14026        Mekong_Delta_VN                89.646843   
+11828         Indus_Plain_PK                68.961380   
+14794         Indus_Plain_PK                52.975854   
+6914          Indus_Plain_PK                61.887349   
+12822  Ganges_Brahmaputra_BD                71.917514   
+11339  Ganges_Brahmaputra_BD                82.829174   
+11314         Chao_Phraya_TH                63.485605   
+
+       Topographic_Wetness_Index  River_Discharge_Rate_CMS  \
+7785                   15.517937                150.000000   
+5231                   15.270902               2765.296546   
+10507                   6.224396               1407.131641   
+14026                  10.669633                150.000000   
+11828                  13.905897               3373.858159   
+14794                   9.181716                629.442490   
+6914                   14.880226               2495.198927   
+12822                  10.817059                220.514846   
+11339                  12.672267               1287.627391   
+11314                   7.532862               2590.946224   
+
+       Deforestation_Rate_Pct  Urban_Impervious_Pct  Soil_Moisture_Anomaly  \
+7785                50.434869             33.454378               0.287057   
+5231                33.948523             31.053291               0.390410   
+10507               42.021737             37.173415               0.586423   
+14026               76.172560             51.930308               0.421566   
+11828               49.122365              4.151515               0.425768   
+14794               11.148476             22.245186               0.422819   
+6914                31.941813              9.072773               0.678560   
+12822               24.538723             29.684354               0.236079   
+11339               22.986827             39.454343               0.771407   
+11314               52.651179             20.761351               0.244518   
+
+       Flood_Probability  Flood_Target_Binary  
+7785            0.537433                    0  
+5231            0.425186                    0  
+10507           0.464351                    0  
+14026           0.660424                    1  
+11828           0.413000                    0  
+14794           0.369023                    0  
+6914            0.531791                    0  
+12822           0.392606                    0  
+11339           0.640751                    1  
+11314           0.394848                    0  
